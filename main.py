@@ -27,7 +27,7 @@ def update():
 if __name__ == "__main__":
     window = tk.Tk()
 
-    with open(join(CONFIG_PATH, "config.json")) as config:
+    with open(join(CONFIG_PATH, "config.json"), encoding='utf-8') as config:
         config_obj = json.load(config)
         states = {state['state_name']: PetState(state, CONFIG_PATH) for state in config_obj["states"]}
         # Validate
